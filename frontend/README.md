@@ -1,14 +1,71 @@
-# Getting Started with Create React App
+# Workout Buddy - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the React frontend for the Workout Buddy MERN application. The frontend provides a modern, responsive user interface for managing workouts and fitness tracking.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- Responsive design that works on desktop and mobile
+- User authentication (login/signup)
+- Workout management (create, view, edit, delete)
+- Real-time updates
+- Modern React with hooks and functional components
+
+## 🛠️ Built With
+
+- **React 18** - JavaScript library for building user interfaces
+- **Create React App** - Development environment and build tools
+- **CSS3** - Modern styling and responsive design
+- **React Router** - Client-side routing
+- **Context API** - State management
+
+## 📁 Project Structure
+
+```
+frontend/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/          # Page components
+│   ├── hooks/          # Custom React hooks
+│   ├── context/        # React Context providers
+│   ├── App.js          # Main App component
+│   └── index.js        # Entry point
+└── package.json
+```
+
+## 🚦 Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn package manager
+- Backend server running on `http://localhost:4000`
+
+### Installation
+
+1. **Navigate to the frontend directory**
+   ```bash
+   cd frontend
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
+   
+   The app will open at [http://localhost:3000](http://localhost:3000)
+
+## 📜 Available Scripts
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
@@ -16,7 +73,7 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
@@ -26,8 +83,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
 
@@ -39,32 +94,30 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## 🔗 Links
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Main Project README](../README.md)
+- [Backend API Documentation](../backend/)
+- [Create React App Documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+- [React Documentation](https://reactjs.org/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Contributing
 
-### Code Splitting
+When contributing to the frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Follow React best practices and hooks patterns
+2. Ensure components are reusable and well-documented
+3. Test your changes across different screen sizes
+4. Run `npm test` before committing
+5. Follow the existing code style and naming conventions
 
-### Analyzing the Bundle Size
+## 📝 Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- The frontend expects the backend API to be running on `http://localhost:4000`
+- All API calls should go through the backend server
+- Environment variables can be added to a `.env` file in the frontend directory
+- For production builds, make sure to update API endpoints accordingly
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For more information about the full application, see the [main README](../README.md).
