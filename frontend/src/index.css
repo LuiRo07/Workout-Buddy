@@ -122,6 +122,33 @@ nav button {
   margin-left: 10px;
 }
 
+/* Navigation user/auth sections */
+.nav-user, .nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-email {
+  font-size: 0.9em;
+  color: #666;
+  margin-right: 5px;
+}
+
+.nav-auth a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  margin: 0 5px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-auth a:hover {
+  background-color: #f0f0f0;
+}
+
 /* auth forms */
 form.signup, form.login {
   max-width: 400px;
@@ -130,3 +157,321 @@ form.signup, form.login {
   background: #fff;
   border-radius: 4px;
 }
+
+/* mobile version */
+
+/* Mobile-first responsive design */
+@media screen and (max-width: 768px) {
+  /* Layout adjustments */
+  .pages {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  /* Home page grid - stack on mobile */
+  .home {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Header responsive */
+  header .container {
+    padding: 10px 15px;
+    flex-wrap: wrap;
+  }
+
+  /* Workout details cards */
+  .workout-details {
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .workout-details h4 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+  }
+
+  .workout-details p {
+    font-size: 0.85em;
+  }
+
+  .workout-details span {
+    top: 15px;
+    right: 15px;
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  /* Form improvements */
+  input {
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    margin-bottom: 15px;
+  }
+
+  form button {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Auth forms */
+  form.signup, form.login {
+    max-width: 100%;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  /* Navigation */
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-user, .nav-auth {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .user-email {
+    font-size: 0.8em;
+    margin-right: 0;
+    word-break: break-word;
+    max-width: 150px;
+  }
+
+  nav button {
+    padding: 8px 12px;
+    margin-left: 0;
+    font-size: 0.9em;
+  }
+
+  .nav-auth a {
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+
+  /* Error messages */
+  div.error {
+    padding: 8px;
+    margin: 15px 0;
+    font-size: 0.9em;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  /* Even tighter spacing for small phones */
+  .pages {
+    padding: 5px;
+  }
+
+  .app-title {
+    text-align: center;
+  }
+
+  header .container {
+    padding: 8px 10px;
+    border: 1px solid blue;
+  }
+
+  .workout-details {
+    padding: 12px;
+    margin: 8px 0;
+  }
+
+  .workout-details h4 {
+    font-size: 1em;
+  }
+
+  .workout-details p {
+    font-size: 0.8em;
+  }
+
+  /* Navigation adjustments */
+  
+  nav {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .nav-user, .nav-auth {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .user-email {
+    font-size: 0.75em;
+    max-width: 100%;
+  }
+
+  nav button {
+    margin: 0;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .nav-auth a {
+    margin: 0;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+
+  /* Form adjustments */
+  form.signup, form.login {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  form button {
+    padding: 10px;
+  }
+}
+
+/* Tablet landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .home {
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+  }
+
+  .pages {
+    padding: 15px;
+  }
+}
+
+/* Touch-friendly improvements for all mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  .workout-details span {
+    padding: 10px;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .nav-auth a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  form button {
+    min-height: 44px;
+  }
+
+  /* Better hover states for touch */
+  .workout-details span:active {
+    background: #e0e0e0;
+    transform: scale(0.95);
+  }
+
+  nav button:active {
+    background: var(--primary);
+    color: #fff;
+    transform: scale(0.95);
+  }
+
+  .nav-auth a:active {
+    background: var(--primary);
+    color: #fff;
+    transform: scale(0.95);
+  }
+
+  form button:active {
+    background: #148a69;
+    transform: scale(0.98);
+  }
+}
+
+/* Loading states for mobile */
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+.no-workouts {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.no-workouts p {
+  font-size: 1.1em;
+  margin: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mobile-specific utilities */
+@media screen and (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .show-mobile {
+    display: block !important;
+  }
+  
+  /* Improve text readability on small screens */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  h2 {
+    font-size: 1.3em;
+  }
+  
+  h3 {
+    font-size: 1.1em;
+  }
+  
+  /* Better spacing for mobile */
+  .workout-details + .workout-details {
+    margin-top: 10px;
+  }
+}
+
