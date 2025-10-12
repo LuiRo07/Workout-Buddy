@@ -2,13 +2,21 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
 
 // express app
 const app = express()
 
-// middleware
+// middleware needs production configuration, render dynamically
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production'
+  ? 'https://workoutbudd.netlify.app'
+  : 'http://localhost:3000', // React app URL
+  credentials: true
+}))
+
 app.use(express.json())
 
 app.use((req, res, next) => {
