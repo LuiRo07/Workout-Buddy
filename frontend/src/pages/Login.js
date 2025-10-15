@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { useLogin } from '../hooks/useLogin';
 
 const Login = () => {
@@ -10,10 +11,12 @@ const Login = () => {
         e.preventDefault()
 
         await login(email, password)
+
+        setPassword('');
     }
 
     return (
-        <form className="signup" onSubmit={handleSubmit}>
+        <form className="login" onSubmit={handleSubmit}>
             <h3>Log in</h3>
 
             <label>Email:</label>
@@ -32,6 +35,12 @@ const Login = () => {
 
             <button disabled={isLoading}>Log in</button>
             {error && <div className="error">{error}</div>}
+            <div className="forgot-password">
+                <span>
+                <Link to="/reset-password">Forgot Password</Link>
+                ?
+                </span>
+            </div>
         </form>
     )
 }
