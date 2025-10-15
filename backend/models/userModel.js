@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const validator = require("validator");
+const { findOneAndUpdate } = require("./workoutModel");
 
 const Schema = mongoose.Schema;
 
@@ -16,6 +17,7 @@ const userSchema = new Schema({
   },
 });
 
+// static signup method
 userSchema.statics.signup = async function (email, password) {
   // validation
   if (!email || !password) {
@@ -64,5 +66,40 @@ userSchema.statics.login = async function (email, password) {
 
   return user;
 };
+
+// Reset Password
+userSchema.statics.reset = async function (email, currentPassword, newPassword, confirmedPassword) {
+  if (!email || !currentPassword || !newPassword || !confirmedPassword) {
+    throw Error("All fields must be filled")
+  }
+
+  const emailExists = await this.findOne({ email })
+
+  if (!emailExists) {
+    throw Error("Email doesn't exist")
+  }
+
+  // checks if the current password matches input
+  const match = await bcrypt.compare(currentPassword, emailExists.password)
+
+    // validate
+  if (!validator.isStrongPassword(newPassword)) {
+    throw Error("Password not strong enough")
+  }
+
+  if (newPassword !== confirmedPassword) {
+    throw Error ("New Password must match confirmed password")
+  }
+
+  if (!match) {
+    throw Error("Incorrect password")
+  }
+
+  const salt = await bcrypt.genSalt(10);
+  const hash = await bcrypt.hash(newPassword, salt);
+
+  const user = await this.findOneAndUpdate({ email: email }, { password: hash }, { new: true })
+
+}
 
 module.exports = mongoose.model("User", userSchema);
