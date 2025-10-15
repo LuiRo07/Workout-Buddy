@@ -3,7 +3,7 @@ import { useAuthContext } from './useAuthContext'
 import API_BASE_URL from '../config/api'
 
 export const useSignup = () => {
-    const [error, setError ] = useState(null)
+    const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
     const { dispatch } = useAuthContext()
 

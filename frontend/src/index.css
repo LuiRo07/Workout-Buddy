@@ -97,6 +97,25 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
+div.success {
+  padding: 10px;
+  background: #f0f9f0;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+div.success {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
 input.error {
   border: 1px solid var(--error);
 }
@@ -157,8 +176,6 @@ form.signup, form.login {
   background: #fff;
   border-radius: 4px;
 }
-
-/* mobile version */
 
 /* Mobile-first responsive design */
 @media screen and (max-width: 768px) {
