@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useLogin } from '../hooks/useLogin';
 
+// components
+import LoadingSpinner from "../components/LoadingSpinner";
+
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -17,6 +20,7 @@ const Login = () => {
 
     return (
         <form className="login" onSubmit={handleSubmit}>
+            {isLoading && <LoadingSpinner message="Logging in... please wait" />}
             <h3>Log in</h3>
 
             <label>Email:</label>

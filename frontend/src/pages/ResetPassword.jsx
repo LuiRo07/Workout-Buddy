@@ -22,9 +22,6 @@ const ResetPassword = () => {
         e.preventDefault()
 
         await resetPassword(email, currentPassword, newPassword, confirmedPassword)
-
-        // Only clear form if password reset was successful
-        // The success message will be shown by the useResetPassword hook
     }
 
     return (
