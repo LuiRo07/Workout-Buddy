@@ -10,7 +10,6 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    index: true,
   },
   password: {
     type: String,
@@ -53,7 +52,7 @@ userSchema.statics.login = async function (email, password) {
     throw Error("All fields must be filled!");
   }
 
-  const user = await this.findOne({ email }).select('email password');
+  const user = await this.findOne({ email });
 
   if (!user) {
     throw Error("Incorrect email");
