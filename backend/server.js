@@ -29,19 +29,31 @@ app.use((req, res, next) => {
 app.use('/api/workouts', workoutRoutes)
 app.use('/api/user', userRoutes)
 
-// connect to db
-mongoose.connect(process.env.MONGO_URI, {
-  maxPoolSize: 10, // Maximum number of connections.
-  serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds.
-  socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity.
-})
+// stable version
+mongoose.connect(process.env.MONGO_URI, {})
   .then(() => {
     console.log('connected to database')
-    // listen to port
     app.listen(process.env.PORT, () => {
-      console.log('listening for requests on port', process.env.PORT)
+      console.log('Listening for requests on port', process.env.PORT)
     })
   })
   .catch((err) => {
     console.log(err)
-  }) 
+  })
+
+// optimized version
+// mongoose.connect(process.env.MONGO_URI, {
+//   maxPoolSize: 10, // Maximum number of connections.
+//   serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds.
+//   socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity.
+// })
+//   .then(() => {
+//     console.log('connected to database')
+//     // listen to port
+//     app.listen(process.env.PORT, () => {
+//       console.log('listening for requests on port', process.env.PORT)
+//     })
+//   })
+//   .catch((err) => {
+//     console.log(err)
+//   }) 
