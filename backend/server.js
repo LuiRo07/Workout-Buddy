@@ -12,7 +12,7 @@ const app = express()
 // middleware needs production configuration, render dynamically
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
-  ? 'https://workoutbudd.netlify.app'
+  ? 'https://workout-buddy-vmn4.onrender.com'
   : 'http://localhost:3000', // React app URL
   credentials: true
 }))
